@@ -1,4 +1,4 @@
-module github.com/wangbaolong/pkg
+module github.com/wangbaolong/go-pkg
 
 go 1.16
 
