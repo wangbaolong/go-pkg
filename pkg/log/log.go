@@ -10,7 +10,7 @@ import (
 type Field = zap.Field
 type ctxKey string
 
-const TraceIdKey ctxKey = "traceId"
+const TraceIdKey ctxKey = "trace-id"
 
 var (
 	writer      io.Writer
@@ -20,13 +20,13 @@ var (
 )
 
 type Config struct {
-	Level   string `yaml:"level"`
-	File    string `yaml:"file"`
-	Format  string `yaml:"format"`
-	Caller  bool   `yaml:"caller"`
-	MaxSize int    `yaml:"maxSize"`
-	MaxDays int    `yaml:"maxDays"`
-	Rotate  bool   `yaml:"rotate"`
+	Level   string `yaml:"level"`   // debug/info/warn/error
+	File    string `yaml:"file"`    // log file example: logs/example.log
+	Format  string `yaml:"format"`  // console/json
+	Caller  bool   `yaml:"caller"`  // whether print caller name
+	MaxSize int    `yaml:"maxSize"` // log file max size
+	MaxDays int    `yaml:"maxDays"` // max log file usage time
+	Rotate  bool   `yaml:"rotate"`  // whether to compress to generate a new file
 }
 
 func Init(cfg *Config) {
