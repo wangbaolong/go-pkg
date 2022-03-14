@@ -107,27 +107,27 @@ func For(ctx context.Context) trace {
 	return newTrace(parseTraceId(ctx))
 }
 
-func Debug(msg string, fields ...zap.Field) {
+func Debug(msg string, fields ...Field) {
 	zapLog.Debug(msg, fields...)
 }
 
-func Info(msg string, fields ...zap.Field) {
+func Info(msg string, fields ...Field) {
 	zapLog.Info(msg, fields...)
 }
 
-func Warn(msg string, fields ...zap.Field) {
+func Warn(msg string, fields ...Field) {
 	zapLog.Warn(msg, fields...)
 }
 
-func Error(msg string, fields ...zap.Field) {
+func Error(msg string, fields ...Field) {
 	zapLog.Error(msg, fields...)
 }
 
-func Panic(msg string, fields ...zap.Field) {
+func Panic(msg string, fields ...Field) {
 	zapLog.Panic(msg, fields...)
 }
 
-func Fatal(msg string, fields ...zap.Field) {
+func Fatal(msg string, fields ...Field) {
 	zapLog.Fatal(msg, fields...)
 }
 
